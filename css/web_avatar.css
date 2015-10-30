@@ -1,0 +1,49 @@
+/*---------------------------------------------------------
+
+	File name: web_avatar.css
+	Data: 10/29/2015
+	
+---------------------------------------------------------*/
+
+.wAvatar{
+	width: 640px;
+	height: 480px;
+	
+	border-width:2px;
+	border-style: solid;
+	border-color: "#000000";
+	}
+	
+.pAvatar{
+	width: 320px;
+	height: 480px;
+	
+	border-width: 1px;
+	border-style: solid;
+	border-color: "#000000";
+	
+	display: block;
+	float: left;
+	}
+	
+.pPhrase{
+	width: 310px;
+	height: 240px;
+	border-width:1px;
+	border-style: solid;
+	border-color: "#000000";
+	
+	display: block;
+	float: left;
+	}
+	
+.pActions{
+	width: 310px;
+	height: 240px;
+	border-width:1px;
+	border-style: solid;
+	border-color: "#000000";
+	
+	display: block;
+	float: left;
+	}
