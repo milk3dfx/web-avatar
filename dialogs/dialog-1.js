@@ -1,21 +1,20 @@
 {
-"root":"1",
-"questions":
-	[
-	{
-	"id": "1",
-	"question" : "Hello! How are you?",
-	"answers" :
-		[
-			{
-			"answer": "Good",
-			"action": "2"
-			},
-			{
-			"answer": "Good",
-			"action": "3"
+	"root":"1",
+	"nodes":
+		{
+		"1":{
+			"text" : "Hello! How are you?",
+			"actions" :
+				[
+					{
+					"text": "Good",
+					"next": "2"
+					},
+					{
+					"text": "As usual",
+					"next": "3"
+					}
+				]
 			}
-		]
-	}
-	]	
+		}	
 }
