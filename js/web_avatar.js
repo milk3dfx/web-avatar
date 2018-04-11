@@ -8,7 +8,10 @@
 (function( $ ) {
     $.fn.CreateAvatar = function() {
 		this.addClass('wAvatar');
-        $('<div>').addClass('pAvatar').html('Avatar').appendTo(this);
+        $('<div>').addClass('pAvatar').appendTo(this);
+		$('<img>').attr('src', './img/anime-girl-e3.png')
+			.attr('width', '210px')
+			.appendTo('.pAvatar');
 		$('<div>').addClass('pPhrase').appendTo(this);
 		$('<div>').addClass('pActions').appendTo(this);
 		var owner = this;
