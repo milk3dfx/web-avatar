@@ -2,11 +2,23 @@
 <head>
 	<link rel="stylesheet" type="text/css" href="css/web_avatar.css">
 
+	<script src = "http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
 	<script src = "https://dl.dropboxusercontent.com/u/66043707/jquery-2.1.4.min.js"></script>
+	
 	<script src = "js/web_avatar.js"></script>
 	<script src = "js/main.js"></script>
 </head>
 <body>
-	<div id = "dAvatar"></div>
+	<div ng-app = "appWebAvatar" ng-controller = "ctrlWebAvatar">
+		<div class = "pAvatar">
+			<img src = "./img/anime-girl-e3.png" width = "210px"></img>
+		</div>
+		<div class = "pPhrase">{{currentNode.text}}</div>
+		<div class = "pActions">
+			<div class = "Action" ng-repeat = "action in currentNode.actions">
+				{{action.text}}
+			</div>
+		</div>
+	</div>
 </body>
 </html>

@@ -5,34 +5,12 @@
 //
 //---------------------------------------------------------
 
-(function( $ ) {
-    $.fn.CreateAvatar = function() {
-		this.addClass('wAvatar');
-        $('<div>').addClass('pAvatar').appendTo(this);
-		$('<img>').attr('src', './img/anime-girl-e3.png')
-			.attr('width', '210px')
-			.appendTo('.pAvatar');
-		$('<div>').addClass('pPhrase').appendTo(this);
-		$('<div>').addClass('pActions').appendTo(this);
-		var owner = this;
-		$.getJSON("./dialogs/dialog-1.js", function(data){
-			console.log('onLoad');
-			console.log(data);
-			var idRoot = data.root
-			$('<div>')
-				.addClass('lAvatarCallout')
-				.html(data.nodes[idRoot].text)
-				.appendTo(".pPhrase");
-			for(var action of data.nodes[idRoot].actions){
-				$('<div>')
-				.addClass('Action')
-				.html(action.text)
-				.appendTo(".pActions");
-			}
-		}).fail(function() {
-			console.log( "Error: Loading dialog file." );
-		});
-        return this;
-    };
- 
-}( jQuery ));
+var app = angular.module('appWebAvatar', []);
+app.controller('ctrlWebAvatar', function($scope, $http) {
+    $http.get("./dialogs/dialog-1.js")
+    .success(function(response){
+		$scope.root = response.root;
+		$scope.nodes = response.nodes;
+		$scope.currentNode = $scope.nodes[$scope.root];
+	});
+});
